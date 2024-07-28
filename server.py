@@ -19,6 +19,10 @@ def sent_analyzer():
     label = response["label"]
     score = response["score"]
 
+    #Check that the entry is not invalid
+    if label is None or score is None:
+        return "Invalid input ! Try again"
+
     return f"The given text has been identified as {label.split('_')[1]} with a score of {score}"
 
 
